@@ -51,7 +51,7 @@ function openQRScanner() {
                 console.log(`QR Code detected: ${qrCodeMessage}`);
 
                 // Handle the QR code data here
-                handleQRCodeDetected(qrCodeMessage);
+                sendQRCodeData(qrCodeMessage);
 
                 // Close the modal after QR code is detected
                 html5QrCode
@@ -86,6 +86,24 @@ function closeQRScanner() {
             });
     }
 }
+
+function sendQRCodeData(qrCodeMessage) {
+    fetch('https://tummoc-production.up.railway.app/api/qrcode/decode', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ qrData: qrCodeMessage })
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
 
 // Function to handle QR code detection
 function updateContent(data) {
