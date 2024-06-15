@@ -30,4 +30,8 @@ public class PassengerDetailsController {
         return new ResponseEntity<>(passengerDetails, HttpStatus.OK);
     }
 
+    @GetMapping
+    public ResponseEntity<String> print(){
+        return new ResponseEntity<>("Hello", HttpStatus.OK);
+    }
 }
