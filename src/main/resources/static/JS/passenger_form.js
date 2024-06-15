@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => {
             if (response.ok) {
-                window.location.href = '/QR_Scanner-Tummoc/static/tummoc_main.html';
+                window.location.href = '/tummoc_main.html';
             } else {
                 console.error('Failed to save passenger details');
             }
