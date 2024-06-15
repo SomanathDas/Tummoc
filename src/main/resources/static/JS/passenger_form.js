@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log(data);
 
-        fetch('http://localhost:8088/api/passenger/save', {
+        fetch('https://tummoc-production.up.railway.app/api/passenger/save', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
