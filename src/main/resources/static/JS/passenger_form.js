@@ -84,3 +84,4 @@ document.addEventListener('DOMContentLoaded', () => {
             cameraModal.style.display = 'none';
         };
 });
+
