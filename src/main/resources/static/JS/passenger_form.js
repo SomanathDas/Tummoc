@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log(data);
 
-        fetch('https://tummoc-production.up.railway.app/api/passenger/save', {
+        fetch('http://localhost:8080/api/passenger/save', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => {
             if (response.ok) {
-                window.location.href = '/tummoc_main.html';
+                window.location.href = 'tummoc_main.html';
             } else {
                 console.error('Failed to save passenger details');
             }

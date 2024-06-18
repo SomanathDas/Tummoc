@@ -1,373 +1,488 @@
 body {
-          font-family: "Montserrat", Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f4f4f4;
-        }
+    font-family: "Montserrat", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
 
-        .header {
-          background-color: #0e2d39;
-          color: white;
-          text-align: left;
-          padding: 40px 20px;
-          position: relative;
-          z-index: 1;
-        }
+  .header {
+    background-color: #0e2d39;
+    color: white;
+    text-align: left;
+    padding: 20px 20px;
+    position: relative;
+    z-index: 1;
+  }
 
-        .header h1 {
-          margin: 0;
-          top: 15px;
-          position: absolute;
-          font-size: 18px;
-          font-weight: 550;
-        }
+  .header h1 {
+    margin: 0;
+    top: 10px;
+    position: absolute;
+    font-size: 13px;
+    font-weight: 400;
+  }
 
-        .header .support {
-          position: absolute;
-          right: 10px;
-          top: 18px;
-          font-size: 13px;
-          color: #ffffff;
-          text-decoration: underline;
-        }
+  .header .support {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 11px;
+    color: #ffffff;
+    text-decoration: none;
+  }
 
-        .pass-container {
-          background-color: white;
-          margin: -30px 20px 20px 20px;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          position: relative;
-          z-index: 2;
-        }
+  .pass-container {
+    background-color: white;
+    margin: 15px 15px 15px 15px;
+    padding: 15px 20px 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+  }
 
-        .pass-header {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          border-bottom: 1px solid #ddd;
-          padding-bottom: 10px;
-          margin-bottom: 10px;
-        }
+  .pass-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
 
-        .pass-header img {
-          width: 70px;
-          height: 70px;
-          border-radius: 50%;
-        }
+  .pass-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: -5px;
+  }
 
-        .pass-header .pass-details {
-          flex-grow: 1;
-          text-align: left;
-          margin-left: 15px;
-        }
+  .pass-header .pass-details {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 20px;
+  }
 
-        .pass-header .pass-details h2 {
-          margin: 0;
-          padding: 0;
-          font-size: 16px;
-          color: #333;
-        }
+  .pass-header .pass-details h2 {
+    margin-top: -5px;
+    margin-bottom: 5px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+  }
 
-        .pass-header .pass-details .tag {
-          display: inline-block;
-          padding: 2px 6px;
-          border-radius: 4px;
-          margin-right: 5px;
-          color: white;
-          font-size: 12.5px;
-        }
+  .pass-header .pass-details .tag {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+    color: white;
+    font-size: 12.5px;
+  }
 
-        .pass-header .pass-details .day {
-          background-color: #ffeb3b75;
-          color: #9f5500;
-          font-weight: 500;
-        }
+  .pass-header .pass-details .day {
+    background-color: #E8F1D7;
+    color: #64911A;
+    font-weight: 500;
+    margin-top: 0px;
+  }
 
-        .pass-header .pass-details .ordinary {
-          background-color: #00ff6a30;
-          color: rgb(3, 155, 79);
-          font-weight: 500;
-        }
+  .pass-header .pass-details .ordinary {
+    background-color: #4f4f4f21;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+  }
 
-        .pass-header .pass-details p {
-          margin: 5px 0;
-          font-size: 14px;
-          color: #333;
-          flex-direction: column;
-        }
+  .pass-header .pass-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+    flex-direction: column;
+    border-bottom-style: dashed;
+    border: #292929;
+  }
 
-        .pass-number {
-          font-weight: 550;
-          margin-left: 5px;
-        }
+  .pass-container .pass-id p {
+    font-size: 11px;
+    margin-left: -2px;
+  }
 
-        .qr-section {
-          text-align: center;
-          margin-top: 10px;
-          margin-bottom: -8px;
-        }
+  .pass-number {
+    font-weight: 550;
+    margin-left: 25px;
+  }
 
-        .qr-container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
+  .qr-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    margin-left: -10px;
+  }
 
-        .qr-container img {
-          height: 50px;
-          border-radius: 5px;
-          z-index: 1;
-        }
+  .qr-container {
+    width: 100%;
+    max-width: 310px;
+  }
 
-        .qr-container .validate-btn {
-          display: inline-block;
-          height: 50px;
-          width: 350px;
-          line-height: 50px;
-          padding: 0 20px;
-          color: rgb(0, 0, 0);
-          background-color: #66ff4733;
-          border-radius: 0 7px 7px 0;
-          text-decoration: none;
-          font-size: 14px;
-          font-weight: bold;
-          margin-left: -20px;
-          z-index: 0;
-        }
+  .qr-container img {
+    height: 20px;
+    margin-right: 10px;
+  }
 
-        .booking-details-container {
-          margin: 20px;
-        }
+  .validate-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 100%;
+    padding: 8px 10px 5px 10px;
+    color: rgb(255, 255, 255);
+    background-color: #0DBDC4;
+    border-radius: 7px 7px 7px 7px;
+    text-decoration: none;
+    font-size: 11px;
+  }
+  .pass-container .how-to-validate {
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #0bb1b6;
+  }
 
-        .booking-details {
-          background-color: white;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+  .how-to-validate .info-logo {
+    height: 20px;
+    margin-right: 5px;
+  }
 
-        .passenger-info {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-        }
+  .booking-details-container {
+    margin: 15px;
+  }
 
-        .passenger-details {
-          flex-grow: 1;
-        }
+  .booking-details {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
-        .passenger-details .group {
-          margin-bottom: 20px;
-        }
+  .booking-details h3 {
+    font-weight: 550;
+  }
 
-        .passenger-details .label {
-          font-size: 13px;
-          color: #333;
-          margin-bottom: -10px;
-        }
+  .passenger-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 
-        .passenger-details .mid-info {
-          font-size: 14.5px;
-          font-weight: bold;
-          color: #333;
-          margin-bottom: -10px;
-        }
+  .passenger-details {
+    flex-grow: 1;
+  }
 
-        .passenger-details .info {
-          margin-bottom: -5px;
-          font-size: 14.5px;
-          font-weight: bold;
-          color: #555;
-        }
+  .passenger-details .group {
+    margin-bottom: 20px;
+  }
 
-        .passenger-avatar-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
+  .passenger-details .label {
+    font-size: 10px;
+    color: #333333;
+    margin-bottom: -11px;
+  }
 
-        .passenger-avatar {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          margin-top: 10px;
-        }
+  .passenger-details .info {
+    margin-bottom: -13px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #151515;
+  }
 
-        .additional-logo {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          margin-top: 70px;
-        }
+  .passenger-avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-        .booking-details h3 {
-          margin-top: 0;
-          font-size: 16px;
-          color: #333;
-          margin-bottom: 1px;
-        }
+  .passenger-avatar {
+    height: 85px;
+    border-radius: 50%;
+    margin-top: 10px;
+  }
 
-        .divider {
-          border-top: 1px solid #ddd;
-          margin: 5px 0;
-        }
+  .additional-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 70px;
+  }
 
-        .pass-validity {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
+  .booking-details h3 {
+    margin-top: 0;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
 
-        .validity-details {
-          flex-grow: 1;
-        }
+  .divider {
+    border-top: 1px solid #777575;
+    border-color: #dfdfdf;
+    margin: 5px 0;
+    border-style: dashed;
+    border-width: 1px;
+  }
 
-        .validity-details .group {
-          margin-bottom: 20px;
-        }
+  .booking-details .passenger-info {
+    margin-top: -7px;
+  }
 
-        .validity-details .label {
-          font-size: 14px;
-          color: #333;
-          margin-bottom: -10px;
-        }
+  .pass-validity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-        .validity-details .info {
-          margin-bottom: 8px;
-          font-size: 14px;
-          font-weight: bold;
-          color: #555;
-        }
+  .validity-details {
+    flex-grow: 1;
+  }
 
-        .pass-fare .label {
-          font-size: 14px;
-          text-decoration: underline;
-          color: #333;
-          margin-top: 50px;
-          margin-bottom: -25px;
-        }
+  .validity-details .group {
+    margin-bottom: 20px;
+  }
 
-        .pass-fare .info {
-          margin-bottom: 8px;
-          font-size: 28px;
-          font-weight: 500;
-          color: #555;
-        }
+  .validity-details .label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: -10px;
+  }
 
-        .last-validated-bus-route {
-          display: flex;
-          margin-left: -7px;
-          margin-right: -10px;
-          justify-content: space-between;
-          background-color: #88ff0028;
-        }
+  .validity-details .info {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+  }
 
-        .last-validated,
-        .bus-number,
-        .route-number {
-          flex: 1;
-          margin-right: 5px;
-        }
+  .pass-fare {
+    margin-right: -25px;
+  }
 
-        .last-validated:last-child,
-        .bus-number:last-child,
-        .route-number:last-child {
-          margin-right: 0;
-        }
+  .pass-fare .label {
+    font-size: 11px;
+    text-decoration: underline;
+    text-decoration-thickness: 0rem;
+    color: #333;
+    margin-top: 80px;
+    margin-bottom: -15px;
+  }
 
-        .last-validated .group,
-        .bus-number .group,
-        .route-number .group {
-          margin-bottom: 10px;
-        }
+  .pass-fare .info {
+    font-size: 19px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+  }
 
-        .last-validated .label,
-        .bus-number .label,
-        .route-number .label {
-          font-size: 11px;
-          color: #333;
-          margin-bottom: -10px;
-        }
+  .generate-mail-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-        .last-validated .info,
-        .bus-number .info,
-        .route-number .info {
-          margin-bottom: 10px;
-          font-size: 11px;
-          font-weight: bold;
-          color: #555;
-        }
+  .booking-details .validate-btn {
+    border: 1px #0DBDC4;
+    background-color: #ffffff;
+    color: #0DBDC4;
+    padding: 15px 1px;
+    font-size: 11px;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-weight: 500;
+    border-radius: 5px;
+    width: 170px;
+    border-style: solid;
+    margin: 10px 0px 10px 0px;
+  }
 
-        .last-validated {
-          flex: 1.1;
-        }
+  .validate-btn .mail-img {
+    height: 15px;
+    margin-bottom: 1px;
+    margin-right: 4px;
+  }
 
-        /* QR Code Scanner */
-        /* Modal Styles */
-        /* General modal styling */
-        /* General modal styling */
-        /* General modal styling */
-        .modal {
-          display: none; /* Hidden by default */
-          position: fixed; /* Stay in place */
-          z-index: 2; /* Sit on top */
-          left: 0;
-          top: 0;
-          width: 100%; /* Full width */
-          height: 100%; /* Full height */
-          overflow: auto; /* Enable scroll if needed */
-          background-color: rgba(0, 0, 0, 0.778); /* Black w/ opacity */
-        }
+  .last-validated-bus-route {
+    justify-content: space-between;
+    background-color: #E9F1D9;
+    border-radius: 5px;
+    padding: 5px 5px 15px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
-        /* Modal content */
-        .modal-content {
-          position: relative;
-          margin: auto;
-          padding: 0;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+  .last-validated .group,
+  .bus-number .group,
+  .route-number .group {
+    margin-bottom: 10px;
+  }
 
-        /* QR reader container */
-        #reader {
-          width: 90%;
-          max-width: 400px;
-          height: auto;
-          background-color: white; /* Just to make it visible, customize as needed */
-        }
+  .last-validated .label,
+  .bus-number .label,
+  .validated-by .label {
+    font-size: 10.5px;
+    color: #333;
+    margin-bottom: -10px;
+  }
 
-        /* Overlay */
-        .overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0);
-          z-index: 10; /* Overlay above other content */
-        }
+  .last-validated .info,
+  .bus-number .info,
+  .validated-by .info {
+    margin-bottom: -3px;
+    font-size: 12px;
+    font-weight: 550;
+    color: #555;
+  }
 
-        /* Close button */
-        .close {
-          position: absolute;
-          top: 20px;
-          right: 20px;
-          font-size: 3em;
-          color: white;
-          cursor: pointer;
-          z-index: 20; /* Above the overlay */
-        }
+  .random-qr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    margin-bottom: 2px;
+  }
 
-        /* Zoom bar */
-        .zoom-bar {
-          position: absolute;
-          bottom: 70px;
-          width: 80%;
-          max-width: 300px;
-          z-index: 20; /* Above the overlay */
+  .random-qr img{
+    height: 140px;
+  }
+
+  .dropdown-container {
+    margin: 15px;
+  }
+
+  .dropdown {
+    width: 100%; /* Full width */
+}
+.dropbtn {
+    width: 100%; /* Full width */
+    background-color: #0DBDC4;
+    color: white;
+    padding: 14px 25px 14px 25px;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "Montserrat", Arial, sans-serif;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+}
+.dropbtn:after {
+    content: ' \25BC'; /* Unicode for down arrow */
+    font-size: 13px;
+}
+.dropdown-content {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    width: auto; /* Full width */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: left;
+    padding: 5px 20px;
+    border-radius: 8px;
+    font-size: 10px;
+}
+.dropdown-content p {
+    color: black;
+    margin: 0;
+}
+.dropdown-content p:hover {
+    background-color: #f1f1f1;
+}
+.dropdown-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
         }
+        .dropdown-content ul li {
+            color: black;
+            padding: 5px 10px;
+        }
+        .dropdown-content ul li::marker {
+            color: #0DBDC4; /* Set the bullet color to blue */
+            padding-left: 20px;
+        }
+.show {
+    display: block;
+}
+
+
+  /* QR Code Scanner */
+  /* Modal Styles */
+  /* General modal styling */
+  /* General modal styling */
+  /* General modal styling */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.778); /* Black w/ opacity */
+  }
+
+  /* Modal content */
+  .modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* QR reader container */
+  #reader {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    background-color: white; /* Just to make it visible, customize as needed */
+  }
+
+  /* Overlay */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    z-index: 10; /* Overlay above other content */
+  }
+
+  /* Close button */
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3em;
+    color: white;
+    cursor: pointer;
+    z-index: 20; /* Above the overlay */
+  }
+
+  /* Zoom bar */
+  .zoom-bar {
+    position: absolute;
+    bottom: 70px;
+    width: 80%;
+    max-width: 300px;
+    z-index: 20; /* Above the overlay */
+  }

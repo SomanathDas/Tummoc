@@ -1,7 +1,7 @@
 let html5QrCode;
 
 function fetchPassengerDetails() {
-    fetch('https://tummoc-production.up.railway.app/api/passenger/get')
+    fetch('http://localhost:8080/api/passenger/get')
         .then(response => response.json())
         .then(data => {
             console.log(data); // For testing purposes
@@ -19,7 +19,7 @@ function fetchPassengerDetails() {
 
 
 function fetchDataAndUpdateContent() {
-    fetch('https://tummoc-production.up.railway.app/api/qrcode/last-validation')
+    fetch('http://localhost:8080/api/qrcode/last-validation')
         .then(response => response.json())
         .then(data => {
             console.log(data); // For testing purposes
@@ -88,7 +88,7 @@ function closeQRScanner() {
 }
 
 function sendQRCodeData(qrCodeMessage) {
-    fetch('https://tummoc-production.up.railway.app/api/qrcode/decode', {
+    fetch('http://localhost:8080/api/qrcode/decode', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -98,7 +98,9 @@ function sendQRCodeData(qrCodeMessage) {
     .then(response => response.text())
     .then(data => {
         console.log(data);
+        fetchDataAndUpdateContent();
     })
+//    updateContent(data);
     .catch(error => {
         console.error('Error:', error);
     });
@@ -131,5 +133,21 @@ window.onclick = function (event) {
 
 window.onload = function () {
     fetchPassengerDetails();
-
 }
+
+function toggleDropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
