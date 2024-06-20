@@ -70,8 +70,13 @@ public class QRCodeService {
             logger.warn("No QR code data found.");
             return null;
         }
+
+        String dateString = String.valueOf(lastValidated.getValidatedAt());
+        LocalDateTime localDateTime = LocalDateTime.parse(dateString);
+        System.out.println("Parsed date: " + localDateTime);
+
         logger.info(String.valueOf(lastValidated));
-        DecodeDataResponse decodeDataResponse = new DecodeDataResponse(lastValidated.getBusNumber(), DateFormatter.formatDateTime(lastValidated.getValidatedAt()));
+        DecodeDataResponse decodeDataResponse = new DecodeDataResponse(lastValidated.getBusNumber(), DateFormatter.formatDateTime(localDateTime));
         logger.info(String.valueOf(decodeDataResponse));
         return decodeDataResponse;
     }
