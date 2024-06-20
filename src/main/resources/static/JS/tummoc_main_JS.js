@@ -1,7 +1,7 @@
 let html5QrCode;
 
 function fetchPassengerDetails() {
-    fetch('http://localhost:8080/api/passenger/get')
+    fetch('http://tummoc-production.up.railway.app/api/passenger/get')
         .then(response => response.json())
         .then(data => {
             console.log(data); // For testing purposes
@@ -19,7 +19,7 @@ function fetchPassengerDetails() {
 
 
 function fetchDataAndUpdateContent() {
-    fetch('http://localhost:8080/api/qrcode/last-validation')
+    fetch('http://tummoc-production.up.railway.app/api/qrcode/last-validation')
         .then(response => response.json())
         .then(data => {
             console.log(data); // For testing purposes
@@ -89,7 +89,7 @@ function closeQRScanner() {
 }
 
 function sendQRCodeData(qrCodeMessage) {
-    fetch('http://localhost:8080/api/qrcode/decode', {
+    fetch('http://tummoc-production.up.railway.app/api/qrcode/decode', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
