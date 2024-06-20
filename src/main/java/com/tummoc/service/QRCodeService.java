@@ -65,6 +65,7 @@ public class QRCodeService {
             logger.warn("No QR code data found.");
             return null;
         }
+        logger.info(String.valueOf(lastValidated));
         DecodeDataResponse decodeDataResponse = new DecodeDataResponse(lastValidated.getBusNumber(), DateFormatter.formatDateTime(lastValidated.getValidatedAt()));
         logger.info(String.valueOf(decodeDataResponse));
         return decodeDataResponse;
