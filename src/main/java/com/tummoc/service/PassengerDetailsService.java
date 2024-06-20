@@ -22,15 +22,15 @@ public class PassengerDetailsService {
         byte[] passengerAvatar = Base64.getDecoder().decode(request.getPassengerAvatar());
 
         PassengerDetails passengerDetails = PassengerDetails.builder()
-                        .passengerName(request.getPassengerName())
-                        .identificationType(request.getIdentificationType())
-                        .identificationNumber(request.getIdentificationNumber())
-                        .passPurchased(LocalDateTime.parse(request.getPassPurchased()))
-                        .passValidFrom(LocalDateTime.parse(request.getPassValidFrom()))
-                        .passValidTill(LocalDateTime.parse(request.getPassValidTill()))
-                        .passengerAvatar(passengerAvatar)
-                        .passFare(Integer.parseInt(request.getPassFare()))
-                        .build();
+                .passengerName(request.getPassengerName())
+                .identificationType(request.getIdentificationType())
+                .identificationNumber(request.getIdentificationNumber())
+                .passPurchased(LocalDateTime.parse(request.getPassPurchased()))
+                .passValidFrom(LocalDateTime.parse(request.getPassValidFrom()))
+                .passValidTill(LocalDateTime.parse(request.getPassValidTill()))
+                .passengerAvatar(passengerAvatar)
+                .passFare(Integer.parseInt(request.getPassFare()))
+                .build();
         return passengerDetailsRepository.save(passengerDetails);
     }
 
@@ -43,14 +43,14 @@ public class PassengerDetailsService {
 
     public PassengerDetailsResponse getPassengerDetailsResponse(PassengerDetails request) {
         return PassengerDetailsResponse.builder()
-               .passengerName(request.getPassengerName())
-               .identificationType(request.getIdentificationType())
-               .identificationNumber(request.getIdentificationNumber())
-               .passPurchased(DateFormatter.formatDateWithWeek(request.getPassPurchased()))
-               .passValidFrom(DateFormatter.formatDateWithWeek(request.getPassValidFrom()))
-               .passValidTill(DateFormatter.formatDateWithWeek(request.getPassValidTill()))
-               .passengerAvatar(Base64.getEncoder().encodeToString(request.getPassengerAvatar()))
-               .passFare(String.valueOf(request.getPassFare()))
-               .build();
+                .passengerName(request.getPassengerName())
+                .identificationType(request.getIdentificationType())
+                .identificationNumber(request.getIdentificationNumber())
+                .passPurchased(DateFormatter.formatDateTime(request.getPassPurchased()))
+                .passValidFrom(DateFormatter.formatDateTime(request.getPassValidFrom()))
+                .passValidTill(DateFormatter.formatDateTime(request.getPassValidTill()))
+                .passengerAvatar(Base64.getEncoder().encodeToString(request.getPassengerAvatar()))
+                .passFare(String.valueOf(request.getPassFare()))
+                .build();
     }
 }

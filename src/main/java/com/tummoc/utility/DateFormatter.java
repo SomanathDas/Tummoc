@@ -11,6 +11,6 @@ public class DateFormatter {
     }
 
     public static String formatDateTime(LocalDateTime time) {
-        return time.format(DateTimeFormatter.ofPattern("HH:mm | dd-MM-yy"));
+        return time.format(DateTimeFormatter.ofPattern("dd MMM yyyy, hh:mm a")).replaceAll("am", "AM").replaceAll("pm", "PM");
     }
 }
