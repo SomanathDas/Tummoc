@@ -18,7 +18,7 @@
 
 <div class="pass-container">
     <div class="pass-header">
-        <img src="/static/image/bmtc%20logo.jfif" alt="BMTC Logo" />
+        <img src="/image/bmtc%20logo.jfif" alt="BMTC Logo" />
         <div class="pass-details">
             <h2>Ordinary Day Pass</h2>
             <div>
@@ -34,7 +34,7 @@
     <div class="qr-section">
         <div class="qr-container">
             <a href="#" class="validate-btn" onclick="openQRScanner()">
-                <img src="/static/image/QR-logo.png" alt="QR Code" />
+                <img src="/image/QR-logo.png" alt="QR Code" />
                 Scan QR to Validate</a>
         </div>
     </div>
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="passenger-avatar-container">
-                <img src="/static/image/avatar-round.png" class="passenger-avatar" alt="Passenger Avatar" id="passengerAvatar" />
+                <img src="/image/avatar-round.png" class="passenger-avatar" alt="Passenger Avatar" id="passengerAvatar" />
                 <div class="pass-fare">
                     <p class="label">Pass Fare</p>
                     <p class="info" id="passFare">$70.0</p>
@@ -82,7 +82,7 @@
         <div class="divider"></div>
         <div class="generate-mail-btn">
             <button class="validate-btn">
-                <img  class="mail-img" src="/static/image/email-open.png" alt="Mail">
+                <img  class="mail-img" src="/image/email-open.png" alt="Mail">
                 Generate mail receipt</button>
         </div>
         <div class="divider"></div>
@@ -108,7 +108,7 @@
         </div>
         <div class="divider"></div>
         <div class="random-qr">
-            <img src="/static/image/demo-qrcode.png" alt="QR"/>
+            <img src="/image/demo-qrcode.png" alt="QR"/>
         </div>
     </div>
 </div>
@@ -149,6 +149,25 @@
                onchange="updateZoom()" />
     </div>
 </div>
+
+<!-- Success QR Popup Modal -->
+<div id="successModal" class="success-modal">
+    <div class="success-modal-content">
+        <div class="checkmark">
+            <img src="/image/success.png" alt="checkmark">
+        </div>
+        <h3>Self verification done successfully</h3>
+        <div class="details">
+            <p>Pass number: <span id="passNumber"></span></p>
+            <p>Pass type: <span id="passType"></span></p>
+            <p>Pass valid till: <span id="validTill"></span></p>
+            <div class="divider"></div>
+            <p class="pass-fare">Pass fare: <span id="passRate"></span></p>
+        </div>
+        <button class="ok-button" onclick="closeModal()">OK</button>
+    </div>
+</div>
+
 <script src="JS/tummoc_main_JS.js"></script>
 </body>
 </html>

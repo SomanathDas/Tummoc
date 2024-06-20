@@ -72,6 +72,7 @@ function openQRScanner() {
         });
 }
 
+
 function closeQRScanner() {
     var modal = document.getElementById("qrModal");
     modal.style.display = "none";
@@ -95,15 +96,55 @@ function sendQRCodeData(qrCodeMessage) {
         },
         body: JSON.stringify({ qrData: qrCodeMessage })
     })
-    .then(response => response.text())
-    .then(data => {
-        console.log(data);
-        fetchDataAndUpdateContent();
-    })
-//    updateContent(data);
-    .catch(error => {
-        console.error('Error:', error);
-    });
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+            fetchDataAndUpdateContent();
+            showModal();
+        })
+        //    updateContent(data);
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+// Function to show the modal popup with static details
+function showModal() {
+    // Get the current date and time
+    const currentDate = new Date();
+        let formattedDateTime = currentDate.toLocaleString('en-GB', {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        }).replace(',', '').replace(' ', ' ');
+
+        // Convert only the AM/PM part to uppercase
+        formattedDateTime = formattedDateTime.replace(/(am|pm)/i, match => match.toUpperCase());
+    // Set the passValidTill element in the modal
+    //document.getElementById('passValidTill').textContent = formattedDate;
+    const details = {
+        passNumber: '1234567890',
+        passType: 'daily',
+        passValidTill: formattedDateTime,
+        passFare: '₹70'
+    };
+
+    document.getElementById('passNumber').textContent = details.passNumber;
+    document.getElementById('passType').textContent = details.passType;
+    document.getElementById('validTill').textContent = details.passValidTill;
+    document.getElementById('passRate').textContent = details.passFare;
+
+    const modal = document.getElementById('successModal');
+    modal.style.display = 'flex';
+}
+
+// Function to close the modal popup
+function closeModal() {
+    const modal = document.getElementById('successModal');
+    modal.style.display = 'none';
 }
 
 
@@ -140,14 +181,14 @@ function toggleDropdown() {
 }
 
 // Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
             }
         }
     }
+}

@@ -3,134 +3,132 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-  }
+}
 
-  .header {
+.header {
     background-color: #0e2d39;
     color: white;
     text-align: left;
     padding: 20px 20px;
     position: relative;
-    z-index: 1;
-  }
+}
 
-  .header h1 {
+.header h1 {
     margin: 0;
     top: 10px;
     position: absolute;
     font-size: 13px;
     font-weight: 400;
-  }
+}
 
-  .header .support {
+.header .support {
     position: absolute;
     right: 10px;
     top: 10px;
     font-size: 11px;
     color: #ffffff;
     text-decoration: none;
-  }
+}
 
-  .pass-container {
+.pass-container {
     background-color: white;
     margin: 15px 15px 15px 15px;
     padding: 15px 20px 10px 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 2;
-  }
+}
 
-  .pass-header {
+.pass-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-bottom: 10px;
     margin-bottom: 10px;
-  }
+}
 
-  .pass-header img {
+.pass-header img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-left: -5px;
-  }
+}
 
-  .pass-header .pass-details {
+.pass-header .pass-details {
     flex-grow: 1;
     text-align: left;
     margin-left: 20px;
-  }
+}
 
-  .pass-header .pass-details h2 {
+.pass-header .pass-details h2 {
     margin-top: -5px;
     margin-bottom: 5px;
     padding: 0;
     font-size: 14px;
     font-weight: 600;
     color: #333;
-  }
+}
 
-  .pass-header .pass-details .tag {
+.pass-header .pass-details .tag {
     display: inline-block;
     padding: 4px 8px;
     border-radius: 4px;
     margin-right: 5px;
     color: white;
     font-size: 12.5px;
-  }
+}
 
-  .pass-header .pass-details .day {
-    background-color: #E8F1D7;
-    color: #64911A;
+.pass-header .pass-details .day {
+    background-color: #e8f1d7;
+    color: #64911a;
     font-weight: 500;
     margin-top: 0px;
-  }
+}
 
-  .pass-header .pass-details .ordinary {
+.pass-header .pass-details .ordinary {
     background-color: #4f4f4f21;
     color: rgb(0, 0, 0);
     font-weight: 500;
-  }
+}
 
-  .pass-header .pass-details p {
+.pass-header .pass-details p {
     margin: 5px 0;
     font-size: 14px;
     color: #333;
     flex-direction: column;
     border-bottom-style: dashed;
     border: #292929;
-  }
+}
 
-  .pass-container .pass-id p {
+.pass-container .pass-id p {
     font-size: 11px;
     margin-left: -2px;
-  }
+}
 
-  .pass-number {
+.pass-number {
     font-weight: 550;
     margin-left: 25px;
-  }
+}
 
-  .qr-section {
+.qr-section {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px;
     margin-left: -10px;
-  }
+}
 
-  .qr-container {
+.qr-container {
     width: 100%;
     max-width: 310px;
-  }
+}
 
-  .qr-container img {
+.qr-container img {
     height: 20px;
     margin-right: 10px;
-  }
+}
 
-  .validate-btn {
+.validate-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,12 +136,13 @@ body {
     width: 100%;
     padding: 8px 10px 5px 10px;
     color: rgb(255, 255, 255);
-    background-color: #0DBDC4;
+    background-color: #0dbdc4;
     border-radius: 7px 7px 7px 7px;
     text-decoration: none;
     font-size: 11px;
-  }
-  .pass-container .how-to-validate {
+}
+
+.pass-container .how-to-validate {
     font-size: 13px;
     font-weight: 500;
     display: flex;
@@ -151,150 +150,151 @@ body {
     align-items: center;
     text-decoration: none;
     color: #0bb1b6;
-  }
+}
 
-  .how-to-validate .info-logo {
+.how-to-validate .info-logo {
     height: 20px;
     margin-right: 5px;
-  }
+}
 
-  .booking-details-container {
+.booking-details-container {
     margin: 15px;
-  }
+}
 
-  .booking-details {
+.booking-details {
     background-color: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+}
 
-  .booking-details h3 {
+.booking-details h3 {
     font-weight: 550;
-  }
+}
 
-  .passenger-info {
+.passenger-info {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-  }
+}
 
-  .passenger-details {
+.passenger-details {
     flex-grow: 1;
-  }
+}
 
-  .passenger-details .group {
+.passenger-details .group {
     margin-bottom: 20px;
-  }
+}
 
-  .passenger-details .label {
+.passenger-details .label {
     font-size: 10px;
     color: #333333;
     margin-bottom: -11px;
-  }
+}
 
-  .passenger-details .info {
+.passenger-details .info {
     margin-bottom: -13px;
     font-size: 12.5px;
     font-weight: 500;
     color: #151515;
-  }
+}
 
-  .passenger-avatar-container {
+.passenger-avatar-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+}
 
-  .passenger-avatar {
+.passenger-avatar {
     height: 85px;
+    width: 85px;
     border-radius: 50%;
     margin-top: 10px;
-  }
+}
 
-  .additional-logo {
+.additional-logo {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-top: 70px;
-  }
+}
 
-  .booking-details h3 {
+.booking-details h3 {
     margin-top: 0;
     font-size: 16px;
     color: #333;
     margin-bottom: 10px;
-  }
+}
 
-  .divider {
+.divider {
     border-top: 1px solid #777575;
     border-color: #dfdfdf;
     margin: 5px 0;
     border-style: dashed;
     border-width: 1px;
-  }
+}
 
-  .booking-details .passenger-info {
+.booking-details .passenger-info {
     margin-top: -7px;
-  }
+}
 
-  .pass-validity {
+.pass-validity {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
 
-  .validity-details {
+.validity-details {
     flex-grow: 1;
-  }
+}
 
-  .validity-details .group {
+.validity-details .group {
     margin-bottom: 20px;
-  }
+}
 
-  .validity-details .label {
+.validity-details .label {
     font-size: 14px;
     color: #333;
     margin-bottom: -10px;
-  }
+}
 
-  .validity-details .info {
+.validity-details .info {
     margin-bottom: 8px;
     font-size: 14px;
     font-weight: bold;
     color: #555;
-  }
+}
 
-  .pass-fare {
+.pass-fare {
     margin-right: -25px;
-  }
+}
 
-  .pass-fare .label {
+.pass-fare .label {
     font-size: 11px;
     text-decoration: underline;
     text-decoration-thickness: 0rem;
     color: #333;
     margin-top: 80px;
     margin-bottom: -15px;
-  }
+}
 
-  .pass-fare .info {
+.pass-fare .info {
     font-size: 19px;
     font-weight: 500;
     color: #555;
     margin-bottom: 5px;
-  }
+}
 
-  .generate-mail-btn {
+.generate-mail-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .booking-details .validate-btn {
-    border: 1px #0DBDC4;
+.booking-details .validate-btn {
+    border: 1px #0dbdc4;
     background-color: #ffffff;
-    color: #0DBDC4;
+    color: #0dbdc4;
     padding: 15px 1px;
     font-size: 11px;
     font-family: "Montserrat", Arial, sans-serif;
@@ -303,68 +303,71 @@ body {
     width: 170px;
     border-style: solid;
     margin: 10px 0px 10px 0px;
-  }
+}
 
-  .validate-btn .mail-img {
+.validate-btn .mail-img {
     height: 15px;
     margin-bottom: 1px;
     margin-right: 4px;
-  }
+}
 
-  .last-validated-bus-route {
+.last-validated-bus-route {
     justify-content: space-between;
-    background-color: #E9F1D9;
+    background-color: #e9f1d9;
     border-radius: 5px;
     padding: 5px 5px 15px 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-  }
+}
 
-  .last-validated .group,
-  .bus-number .group,
-  .route-number .group {
+.last-validated .group,
+.bus-number .group,
+.route-number .group {
     margin-bottom: 10px;
-  }
+}
 
-  .last-validated .label,
-  .bus-number .label,
-  .validated-by .label {
+.last-validated .label,
+.bus-number .label,
+.validated-by .label {
     font-size: 10.5px;
     color: #333;
     margin-bottom: -10px;
-  }
+}
 
-  .last-validated .info,
-  .bus-number .info,
-  .validated-by .info {
+.last-validated .info,
+.bus-number .info,
+.validated-by .info {
     margin-bottom: -3px;
     font-size: 12px;
     font-weight: 550;
     color: #555;
-  }
+}
 
-  .random-qr {
+.random-qr {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px;
     margin-bottom: 2px;
-  }
-
-  .random-qr img{
-    height: 140px;
-  }
-
-  .dropdown-container {
-    margin: 15px;
-  }
-
-  .dropdown {
-    width: 100%; /* Full width */
 }
+
+.random-qr img {
+    height: 140px;
+}
+
+.dropdown-container {
+    margin: 15px;
+}
+
+.dropdown {
+    width: 100%;
+    /* Full width */
+}
+
 .dropbtn {
-    width: 100%; /* Full width */
-    background-color: #0DBDC4;
+    width: 100%;
+    /* Full width */
+    background-color: #0dbdc4;
     color: white;
     padding: 14px 25px 14px 25px;
     font-size: 12px;
@@ -377,66 +380,81 @@ body {
     align-items: center;
     border-radius: 8px;
 }
+
 .dropbtn:after {
-    content: ' \25BC'; /* Unicode for down arrow */
+    content: " \25BC";
+    /* Unicode for down arrow */
     font-size: 13px;
 }
+
 .dropdown-content {
     display: none;
     align-items: center;
     justify-content: center;
     background-color: #f9f9f9;
-    width: auto; /* Full width */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: auto;
+    /* Full width */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     text-align: left;
     padding: 5px 20px;
     border-radius: 8px;
     font-size: 10px;
 }
+
 .dropdown-content p {
     color: black;
     margin: 0;
 }
+
 .dropdown-content p:hover {
     background-color: #f1f1f1;
 }
+
 .dropdown-content ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .dropdown-content ul li {
-            color: black;
-            padding: 5px 10px;
-        }
-        .dropdown-content ul li::marker {
-            color: #0DBDC4; /* Set the bullet color to blue */
-            padding-left: 20px;
-        }
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.dropdown-content ul li {
+    color: black;
+    padding: 5px 10px;
+}
+
+.dropdown-content ul li::marker {
+    color: #0dbdc4;
+    /* Set the bullet color to blue */
+    padding-left: 20px;
+}
+
 .show {
     display: block;
 }
 
-
-  /* QR Code Scanner */
-  /* Modal Styles */
-  /* General modal styling */
-  /* General modal styling */
-  /* General modal styling */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Sit on top */
+/* QR Code Scanner */
+/* Modal Styles */
+/* General modal styling */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 2;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.778); /* Black w/ opacity */
-  }
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.778);
+    /* Black w/ opacity */
+}
 
-  /* Modal content */
-  .modal-content {
+/* Modal content */
+.modal-content {
     position: relative;
     margin: auto;
     padding: 0;
@@ -446,43 +464,131 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  /* QR reader container */
-  #reader {
+/* QR reader container */
+#reader {
     width: 90%;
     max-width: 400px;
     height: auto;
-    background-color: white; /* Just to make it visible, customize as needed */
-  }
+    background-color: white;
+    /* Just to make it visible, customize as needed */
+}
 
-  /* Overlay */
-  .overlay {
+/* Overlay */
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0);
-    z-index: 10; /* Overlay above other content */
-  }
+    z-index: 10;
+    /* Overlay above other content */
+}
 
-  /* Close button */
-  .close {
+/* Close button */
+.close {
     position: absolute;
     top: 20px;
     right: 20px;
     font-size: 3em;
     color: white;
     cursor: pointer;
-    z-index: 20; /* Above the overlay */
-  }
+    z-index: 20;
+    /* Above the overlay */
+}
 
-  /* Zoom bar */
-  .zoom-bar {
+/* Zoom bar */
+.zoom-bar {
     position: absolute;
     bottom: 70px;
     width: 80%;
     max-width: 300px;
-    z-index: 20; /* Above the overlay */
-  }
+    z-index: 20;
+    /* Above the overlay */
+}
+
+/* Success QR Modal styles */
+.success-modal {
+    font-family: "Montserrat", Arial, sans-serif;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.446);
+    justify-content: center;
+    align-items: center;
+}
+
+.success-modal-content {
+    font-size: 14px;
+    background-color: #fff;
+    margin: 12px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.checkmark img {
+    height: 110px;
+    width: 110px;
+}
+
+h3 {
+    font-size: 16px;
+    color: #207F84;
+}
+
+.details {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.1px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.details p {
+    margin: 10px 0;
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.success-modal .pass-fare {
+    font-size: 12px;
+    font-weight: 550;
+    color: black;
+}
+
+.details p span {
+    flex: 1;
+    text-align: right;
+}
+
+.ok-button {
+    background-color: #0F2D38;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.ok-button:hover {
+    background-color: #005f73;
+}
+
+@media screen and (max-width: 600px) {
+    .success-modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+}

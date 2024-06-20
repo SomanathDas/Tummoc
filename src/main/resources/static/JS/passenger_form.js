@@ -42,46 +42,46 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body: JSON.stringify(data)
         })
-        .then(response => {
-            if (response.ok) {
-                window.location.href = 'tummoc_main.html';
-            } else {
-                console.error('Failed to save passenger details');
-            }
-        })
-        .catch(error => console.error('Error:', error));
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = 'tummoc_main.html';
+                } else {
+                    console.error('Failed to save passenger details');
+                }
+            })
+            .catch(error => console.error('Error:', error));
     });
 
     let cameraStream;
-        const cameraModal = document.getElementById('cameraModal');
-        const videoElement = document.getElementById('camera');
-        const passengerAvatar = document.getElementById('passengerAvatar');
-        let capturedImage = '';
+    const cameraModal = document.getElementById('cameraModal');
+    const videoElement = document.getElementById('camera');
+    const passengerAvatar = document.getElementById('passengerAvatar');
+    let capturedImage = '';
 
-        window.openCamera = () => {
-            navigator.mediaDevices.getUserMedia({ video: true })
-                .then(stream => {
-                    cameraStream = stream;
-                    videoElement.srcObject = stream;
-                    cameraModal.style.display = 'block';
-                })
-                .catch(err => {
-                    console.error('Error accessing the camera: ', err);
-                });
-        };
+    window.openCamera = () => {
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                cameraStream = stream;
+                videoElement.srcObject = stream;
+                cameraModal.style.display = 'block';
+            })
+            .catch(err => {
+                console.error('Error accessing the camera: ', err);
+            });
+    };
 
-        window.captureImage = () => {
-            const canvas = document.createElement('canvas');
-            canvas.width = videoElement.videoWidth;
-            canvas.height = videoElement.videoHeight;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+    window.captureImage = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = videoElement.videoWidth;
+        canvas.height = videoElement.videoHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
 
-            capturedImage = canvas.toDataURL('image/png');
-            passengerAvatar.src = capturedImage;
+        capturedImage = canvas.toDataURL('image/png');
+        passengerAvatar.src = capturedImage;
 
-            cameraStream.getTracks().forEach(track => track.stop());
-            cameraModal.style.display = 'none';
-        };
+        cameraStream.getTracks().forEach(track => track.stop());
+        cameraModal.style.display = 'none';
+    };
 });
 
