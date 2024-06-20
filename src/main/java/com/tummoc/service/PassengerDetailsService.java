@@ -40,12 +40,13 @@ public class PassengerDetailsService {
 
     public PassengerDetailsResponse getPassengerDetails() {
         PassengerDetails passengerDetails = passengerDetailsRepository.findTopByOrderByPassengerIdDesc();
+        System.out.println("Getting Passenger details from database: " + passengerDetails);
         return getPassengerDetailsResponse(passengerDetails);
     }
 
 
     public PassengerDetailsResponse getPassengerDetailsResponse(PassengerDetails request) {
-        return PassengerDetailsResponse.builder()
+        PassengerDetailsResponse passengerDetailsResponse = PassengerDetailsResponse.builder()
                 .passengerName(request.getPassengerName())
                 .identificationType(request.getIdentificationType())
                 .identificationNumber(request.getIdentificationNumber())
@@ -55,5 +56,8 @@ public class PassengerDetailsService {
                 .passengerAvatar(Base64.getEncoder().encodeToString(request.getPassengerAvatar()))
                 .passFare(String.valueOf(request.getPassFare()))
                 .build();
+
+        System.out.println("Add Passenger details to Passenger details Response: " + passengerDetailsResponse);
+        return passengerDetailsResponse;
     }
 }
