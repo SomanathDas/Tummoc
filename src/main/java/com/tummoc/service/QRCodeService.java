@@ -41,11 +41,16 @@ public class QRCodeService {
         }
 
         LocalDateTime dateTime = LocalDateTime.now();
+        String date = String.valueOf(dateTime);
+        LocalDateTime localDateTime = LocalDateTime.parse(date);
+        System.out.println("converted date: " + localDateTime);
+
 
         ValidationLog validationLog = new ValidationLog();
         validationLog.setBusNumber(vehicleNumber);
-        validationLog.setValidatedAt(dateTime);
-        validationLogRepository.save(validationLog);
+        validationLog.setValidatedAt(localDateTime);
+        ValidationLog validationLog1 = validationLogRepository.save(validationLog);
+        System.out.println("Validation Log: " + validationLog1);
 
         QRCodeData qrCodeData = new QRCodeData();
         qrCodeData.setData(data);
