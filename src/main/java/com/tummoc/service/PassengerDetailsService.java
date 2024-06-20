@@ -31,7 +31,10 @@ public class PassengerDetailsService {
                 .passengerAvatar(passengerAvatar)
                 .passFare(Integer.parseInt(request.getPassFare()))
                 .build();
-        return passengerDetailsRepository.save(passengerDetails);
+        System.out.println(passengerDetails);
+        PassengerDetails details = passengerDetailsRepository.save(passengerDetails);
+        System.out.println("After Saving: " + details);
+        return details;
     }
 
 
