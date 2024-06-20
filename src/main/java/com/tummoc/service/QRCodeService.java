@@ -50,7 +50,7 @@ public class QRCodeService {
         validationLog.setBusNumber(vehicleNumber);
         validationLog.setValidatedAt(localDateTime);
         ValidationLog validationLog1 = validationLogRepository.save(validationLog);
-        System.out.println("Validation Log: " + validationLog1);
+        System.out.println("Validation Log after save: " + validationLog1);
 
         QRCodeData qrCodeData = new QRCodeData();
         qrCodeData.setData(data);
