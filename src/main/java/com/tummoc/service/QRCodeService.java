@@ -71,6 +71,8 @@ public class QRCodeService {
 
         String convertedDateTime = TimeZoneConversion.convertOregonToIST(lastValidated.getValidatedAt());
 
+        logger.info("converted date: {}", convertedDateTime);
+
         DecodeDataResponse decodeDataResponse = new DecodeDataResponse(lastValidated.getBusNumber(), convertedDateTime);
         logger.info(String.valueOf(decodeDataResponse));
         return decodeDataResponse;
