@@ -571,6 +571,7 @@ h3 {
 .details p span {
     flex: 1;
     text-align: right;
+    font-weight: 550;
 }
 
 .ok-button {
