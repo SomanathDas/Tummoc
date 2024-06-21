@@ -126,7 +126,7 @@ function showModal() {
     // Set the passValidTill element in the modal
     //document.getElementById('passValidTill').textContent = formattedDate;
     const details = {
-        passNumber: '1234567890',
+        passNumber: 'TEHDI274784',
         passType: 'daily',
         passValidTill: formattedDateTime,
         passFare: '₹70'

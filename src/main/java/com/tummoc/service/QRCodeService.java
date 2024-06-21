@@ -69,19 +69,14 @@ public class QRCodeService {
             return null;
         }
 
+        String busNumber = "BMTC BUS "+ lastValidated.getBusNumber();
         String convertedDateTime = TimeZoneConversion.convertOregonToIST(lastValidated.getValidatedAt());
 
         logger.info("converted date: {}", convertedDateTime);
 
-        DecodeDataResponse decodeDataResponse = new DecodeDataResponse(lastValidated.getBusNumber(), convertedDateTime);
+        DecodeDataResponse decodeDataResponse = new DecodeDataResponse(busNumber, convertedDateTime);
         logger.info(String.valueOf(decodeDataResponse));
         return decodeDataResponse;
-    }
-
-    private ZonedDateTime convertToIST(LocalDateTime dateTime) {
-        // Convert from UTC to IST
-        return dateTime.atZone(ZoneId.of("UTC"))
-                .withZoneSameInstant(ZoneId.of("Asia/Kolkata"));
     }
 
 }
