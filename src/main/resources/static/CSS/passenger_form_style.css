@@ -112,31 +112,23 @@ button:hover {
 }
 
 .passenger-avatar-container {
+    width: 70px;
+    height: 70px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 10px;
-}
-
-.passenger-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    overflow: hidden;
     margin-bottom: 10px;
-}
-
-.passenger-avatar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
+    margin-left: 50%;
+    margin-right: 50%;
 }
 
 .passenger-avatar {
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    margin-top: 10px;
+    object-fit: cover;
 }
 
 /* Modal Styles */
