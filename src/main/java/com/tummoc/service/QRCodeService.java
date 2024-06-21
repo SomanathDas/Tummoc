@@ -7,17 +7,15 @@ import com.tummoc.repository.QRCodeDataRepository;
 import com.tummoc.repository.ValidationLogRepository;
 import com.tummoc.utility.DateFormatter;
 import com.tummoc.utility.ExtractBusNumber;
+import com.tummoc.utility.TimeZoneConversion;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import static com.tummoc.utility.ExtractBusNumber.extractVehicleNumber;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 @Service
 public class QRCodeService {
@@ -71,14 +69,17 @@ public class QRCodeService {
             return null;
         }
 
-        String dateString = String.valueOf(lastValidated.getValidatedAt());
-        LocalDateTime localDateTime = LocalDateTime.parse(dateString);
-        System.out.println("Parsed date: " + localDateTime);
+        String convertedDateTime = TimeZoneConversion.convertOregonToIST(lastValidated.getValidatedAt());
 
-        logger.info(String.valueOf(lastValidated));
-        DecodeDataResponse decodeDataResponse = new DecodeDataResponse(lastValidated.getBusNumber(), DateFormatter.formatDateTime(localDateTime));
+        DecodeDataResponse decodeDataResponse = new DecodeDataResponse(lastValidated.getBusNumber(), convertedDateTime);
         logger.info(String.valueOf(decodeDataResponse));
         return decodeDataResponse;
+    }
+
+    private ZonedDateTime convertToIST(LocalDateTime dateTime) {
+        // Convert from UTC to IST
+        return dateTime.atZone(ZoneId.of("UTC"))
+                .withZoneSameInstant(ZoneId.of("Asia/Kolkata"));
     }
 
 }
