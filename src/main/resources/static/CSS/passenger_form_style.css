@@ -162,6 +162,7 @@ button:hover {
     height: auto;
     flex: 1;
     background-color: black;
+    transform: scaleX(-1);
 }
 
 .captureButton {
