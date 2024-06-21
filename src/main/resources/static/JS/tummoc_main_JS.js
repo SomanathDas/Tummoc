@@ -1,32 +1,52 @@
 let html5QrCode;
 
 function fetchPassengerDetails() {
-    fetch('https://tummoc-production.up.railway.app/api/passenger/get')
+    fetch('http://localhost:8080/api/passenger/get')
         .then(response => response.json())
         .then(data => {
             console.log(data); // For testing purposes
-            document.getElementById('passengerName').textContent = data.passengerName;
-            document.getElementById('identificationType').textContent = data.identificationType;
-            document.getElementById('identificationNumber').textContent = data.identificationNumber;
-            document.getElementById('passPurchased').textContent = data.passPurchased;
-            document.getElementById('passValidFrom').textContent = data.passValidFrom;
-            document.getElementById('passValidTill').textContent = data.passValidTill;
-            document.getElementById('passengerAvatar').src = 'data:image/png;base64,' + data.passengerAvatar;
-            document.getElementById('passFare').textContent = '₹' + data.passFare;
+
+            // Store the data in local storage
+            localStorage.setItem('passengerDetails', JSON.stringify(data));
+
+            // Update the DOM with fetched data
+            updatePassengerDetails(data);
         })
         .catch(error => console.error('Error fetching passenger details:', error));
 }
 
 
+function updatePassengerDetails(data) {
+    document.getElementById('passengerName').textContent = data.passengerName;
+    document.getElementById('identificationType').textContent = data.identificationType;
+    document.getElementById('identificationNumber').textContent = data.identificationNumber;
+    document.getElementById('passPurchased').textContent = data.passPurchased;
+    document.getElementById('passValidFrom').textContent = data.passValidFrom;
+    document.getElementById('passValidTill').textContent = data.passValidTill;
+    document.getElementById('passengerAvatar').src = 'data:image/png;base64,' + data.passengerAvatar;
+    document.getElementById('passFare').textContent = '₹' + data.passFare;
+}
+
+
 function fetchDataAndUpdateContent() {
-    fetch('https://tummoc-production.up.railway.app/api/qrcode/last-validation')
+    fetch('http://localhost:8080/api/qrcode/last-validation')
         .then(response => response.json())
         .then(data => {
             console.log(data); // For testing purposes
-            document.getElementById('lastValidatedInfo').textContent = data.validatedAt;
-            document.getElementById('busNumberInfo').textContent = data.busNumber;
+
+            // Store the data in local storage
+            localStorage.setItem('lastValidationDetails', JSON.stringify(data));
+
+            // Update the DOM with fetched data
+            updateLastValidationDetails(data);
+
         })
         .catch(error => console.error('Error:', error));
+}
+
+function updateLastValidationDetails(data) {
+    document.getElementById('lastValidatedInfo').textContent = data.validatedAt;
+    document.getElementById('busNumberInfo').textContent = data.busNumber;
 }
 
 // Load data from the server and update content
@@ -89,7 +109,7 @@ function closeQRScanner() {
 }
 
 function sendQRCodeData(qrCodeMessage) {
-    fetch('https://tummoc-production.up.railway.app/api/qrcode/decode', {
+    fetch('http://localhost:8080/api/qrcode/decode', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -112,21 +132,21 @@ function sendQRCodeData(qrCodeMessage) {
 function showModal() {
     // Get the current date and time
     const currentDate = new Date();
-        let formattedDateTime = currentDate.toLocaleString('en-GB', {
-            day: '2-digit',
-            month: 'short',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true
-        }).replace(',', '').replace(' ', ' ');
+    let formattedDateTime = currentDate.toLocaleString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    }).replace(',', '').replace(' ', ' ');
 
-        // Convert only the AM/PM part to uppercase
-        formattedDateTime = formattedDateTime.replace(/(am|pm)/i, match => match.toUpperCase());
+    // Convert only the AM/PM part to uppercase
+    formattedDateTime = formattedDateTime.replace(/(am|pm)/i, match => match.toUpperCase());
     // Set the passValidTill element in the modal
     //document.getElementById('passValidTill').textContent = formattedDate;
     const details = {
-        passNumber: 'TEHDI274784',
+        passNumber: '1234567890',
         passType: 'daily',
         passValidTill: formattedDateTime,
         passFare: '₹70'
@@ -173,7 +193,21 @@ window.onclick = function (event) {
 };
 
 window.onload = function () {
-    fetchPassengerDetails();
+    // Check if passenger details are already stored in local storage
+    const storedPassengerDetails = localStorage.getItem('passengerDetails');
+    if (storedPassengerDetails) {
+        updatePassengerDetails(JSON.parse(storedPassengerDetails));
+    } else {
+        fetchPassengerDetails();
+    }
+
+    // Check if last validation details are already stored in local storage
+    const storedValidationDetails = localStorage.getItem('lastValidationDetails');
+    if (storedValidationDetails) {
+        updateLastValidationDetails(JSON.parse(storedValidationDetails));
+    } else {
+        fetchDataAndUpdateContent();
+    }
 }
 
 function toggleDropdown() {
