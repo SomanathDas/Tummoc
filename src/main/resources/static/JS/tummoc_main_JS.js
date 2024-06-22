@@ -173,6 +173,10 @@ window.onclick = function (event) {
 };
 
 window.onload = function () {
+    fetch('https://dns.google/resolve?name=tummoc-production.up.railway.app&type=A')
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error fetching DNS status:', error));
     fetchPassengerDetails();
 }
 
