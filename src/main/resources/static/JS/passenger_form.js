@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
         originalCtx.scale(-1, 1);
         originalCtx.drawImage(videoElement, 0, 0, originalCanvas.width, originalCanvas.height);
 
-
         // Create a second canvas for resizing
         const targetWidth = 360; // desired width in pixels
         const targetHeight = 270; // desired height in pixels
