@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         originalCanvas.height = videoElement.videoHeight;
         const originalCtx = originalCanvas.getContext('2d');
 
+
         // Apply the mirror transformation before drawing the image
         originalCtx.translate(originalCanvas.width, 0);
         originalCtx.scale(-1, 1);
