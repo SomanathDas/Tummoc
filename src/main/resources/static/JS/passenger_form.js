@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         // Create a second canvas for resizing
-        const targetWidth = 360; // desired width in pixels
-        const targetHeight = 270; // desired height in pixels
+        const targetWidth = 270; // desired width in pixels
+        const targetHeight = 360; // desired height in pixels
         const resizedCanvas = document.createElement('canvas');
         resizedCanvas.width = targetWidth;
         resizedCanvas.height = targetHeight;
