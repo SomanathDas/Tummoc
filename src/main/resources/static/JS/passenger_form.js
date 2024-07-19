@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
         originalCtx.drawImage(videoElement, 0, 0, originalCanvas.width, originalCanvas.height);
 
         // Create a second canvas for resizing
-        const targetWidth = 100; // desired width in pixels
-        const targetHeight = 100; // desired height in pixels
+        const targetWidth = 360; // desired width in pixels
+        const targetHeight = 270; // desired height in pixels
         const resizedCanvas = document.createElement('canvas');
         resizedCanvas.width = targetWidth;
         resizedCanvas.height = targetHeight;
