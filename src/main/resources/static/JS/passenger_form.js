@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
         })
             .then(response => {
                 if (response.ok) {
+                    // Clear local storage to force fetch of new data
+                    localStorage.removeItem('passengerDetails');
                     window.location.href = 'tummoc_main.html';
                 } else {
                     console.error('Failed to save passenger details');
