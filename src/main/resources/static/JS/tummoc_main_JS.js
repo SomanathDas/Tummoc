@@ -15,6 +15,9 @@ function fetchPassengerDetails() {
 
             // Update the DOM with fetched data
             updatePassengerDetails(data);
+
+            // Update pass details based on passFare
+            updatePassDetails(data.passFare);
         })
         .catch((error) =>
             console.error("Error fetching passenger details:", error)
@@ -51,6 +54,19 @@ function fetchDataAndUpdateContent() {
 function updateLastValidationDetails(data) {
     document.getElementById('lastValidatedInfo').textContent = data.validatedAt;
     document.getElementById('busNumberInfo').textContent = data.busNumber;
+}
+
+function updatePassDetails(passFare) {
+    const passTagElement = document.getElementById('passTag');
+    const passTitleElement = document.getElementById('passTitle');
+
+    if (passFare === '70') {
+        passTagElement.textContent = 'Ordinary';
+        passTitleElement.textContent = 'Ordinary Day Pass';
+    } else if (passFare === '120') {
+        passTagElement.textContent = 'AC';
+        passTitleElement.textContent = 'Vajra Gold Day Pass';
+    }
 }
 
 // Function to open the QR scanner
@@ -189,6 +205,7 @@ window.onload = function () {
         const globalPassengerDetails = JSON.parse(storedPassengerDetails);
         localPassengerDetails = globalPassengerDetails;
         updatePassengerDetails(globalPassengerDetails);
+        updatePassDetails(globalPassengerDetails.passFare);
     } else {
         fetchPassengerDetails();
     }
