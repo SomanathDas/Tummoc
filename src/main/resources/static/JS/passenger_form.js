@@ -72,91 +72,43 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     };
 
-//    window.captureImage = () => {
-//        const canvas = document.createElement('canvas');
-//        canvas.width = videoElement.videoWidth;
-//        canvas.height = videoElement.videoHeight;
-//        const ctx = canvas.getContext('2d');
-//
-//        // Apply the mirror transformation before drawing the image
-//        ctx.translate(canvas.width, 0);
-//        ctx.scale(-1, 1);
-//        ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-//
-//        capturedImage = canvas.toDataURL('image/png');
-//        passengerAvatar.src = capturedImage;
-//
-//        cameraStream.getTracks().forEach(track => track.stop());
-//        cameraModal.style.display = 'none';
-//    };
-
-//    window.captureImage = () => {
-//        const originalCanvas = document.createElement('canvas');
-//        originalCanvas.width = videoElement.videoWidth;
-//        originalCanvas.height = videoElement.videoHeight;
-//        const originalCtx = originalCanvas.getContext('2d');
-//
-//
-//        // Apply the mirror transformation before drawing the image
-//        originalCtx.translate(originalCanvas.width, 0);
-//        originalCtx.scale(-1, 1);
-//        originalCtx.drawImage(videoElement, 0, 0, originalCanvas.width, originalCanvas.height);
-//
-//
-//        // Create a second canvas for resizing
-//        const targetWidth = 270; // desired width in pixels
-//        const targetHeight = 360; // desired height in pixels
-//        const resizedCanvas = document.createElement('canvas');
-//        resizedCanvas.width = targetWidth;
-//        resizedCanvas.height = targetHeight;
-//        const resizedCtx = resizedCanvas.getContext('2d');
-//
-//        // Calculate the scaling factors to maintain the aspect ratio
-//        const widthRatio = targetWidth / originalCanvas.width;
-//        const heightRatio = targetHeight / originalCanvas.height;
-//        const scale = Math.min(widthRatio, heightRatio);
-//
-//        // Calculate the offset to center the image
-//        const x = (targetWidth - originalCanvas.width * scale) / 2;
-//        const y = (targetHeight - originalCanvas.height * scale) / 2;
-//
-//        // Draw the image from the original canvas to the resized canvas
-//        resizedCtx.drawImage(originalCanvas, x, y, originalCanvas.width * scale, originalCanvas.height * scale);
-//
-//        // Get the resized image as a data URL
-//        capturedImage = resizedCanvas.toDataURL('image/png');
-//        passengerAvatar.src = capturedImage;
-//
-//        cameraStream.getTracks().forEach(track => track.stop());
-//        cameraModal.style.display = 'none';
-//    };
-
     window.captureImage = () => {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
+        const originalCanvas = document.createElement('canvas');
+        originalCanvas.width = videoElement.videoWidth;
+        originalCanvas.height = videoElement.videoHeight;
+        const originalCtx = originalCanvas.getContext('2d');
+
+
+        // Apply the mirror transformation before drawing the image
+        originalCtx.translate(originalCanvas.width, 0);
+        originalCtx.scale(-1, 1);
+        originalCtx.drawImage(videoElement, 0, 0, originalCanvas.width, originalCanvas.height);
+
+
+        // Create a second canvas for resizing
         const targetWidth = 270; // desired width in pixels
         const targetHeight = 360; // desired height in pixels
-
-        // Set canvas size
-        canvas.width = targetWidth;
-        canvas.height = targetHeight;
+        const resizedCanvas = document.createElement('canvas');
+        resizedCanvas.width = targetWidth;
+        resizedCanvas.height = targetHeight;
+        const resizedCtx = resizedCanvas.getContext('2d');
 
         // Calculate the scaling factors to maintain the aspect ratio
-        const scale = Math.min(targetWidth / videoElement.videoWidth, targetHeight / videoElement.videoHeight);
+        const widthRatio = targetWidth / originalCanvas.width;
+        const heightRatio = targetHeight / originalCanvas.height;
+        const scale = Math.min(widthRatio, heightRatio);
 
         // Calculate the offset to center the image
-        const x = (targetWidth - videoElement.videoWidth * scale) / 2;
-        const y = (targetHeight - videoElement.videoHeight * scale) / 2;
+        const x = (targetWidth - originalCanvas.width * scale) / 2;
+        const y = (targetHeight - originalCanvas.height * scale) / 2;
 
-        // Apply the mirror transformation and draw the image
-        ctx.translate(targetWidth, 0);
-        ctx.scale(-1, 1);
-        ctx.drawImage(videoElement, x - targetWidth, y, videoElement.videoWidth * scale, videoElement.videoHeight * scale);
+        // Draw the image from the original canvas to the resized canvas
+        resizedCtx.drawImage(originalCanvas, x, y, originalCanvas.width * scale, originalCanvas.height * scale);
 
-        // Get the captured image as a data URL
-        passengerAvatar.src = canvas.toDataURL('image/png');
+        // Get the resized image as a data URL
+        capturedImage = resizedCanvas.toDataURL('image/png');
+        passengerAvatar.src = capturedImage;
 
-        // Stop the camera stream and hide the camera modal
         cameraStream.getTracks().forEach(track => track.stop());
         cameraModal.style.display = 'none';
     };
