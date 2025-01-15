@@ -60,10 +60,10 @@ function updatePassDetails(passFare) {
     const passTagElement = document.getElementById('passTag');
     const passTitleElement = document.getElementById('passTitle');
 
-    if (passFare === '70') {
+    if (passFare === '80') {
         passTagElement.textContent = 'Ordinary';
         passTitleElement.textContent = 'Ordinary Day Pass';
-    } else if (passFare === '120') {
+    } else if (passFare === '150') {
         passTagElement.textContent = 'AC';
         passTitleElement.textContent = 'Vajra Gold Day Pass';
     }
@@ -145,7 +145,7 @@ function sendQRCodeData(qrCodeMessage) {
 // Function to show the modal popup with static details
 function showModal() {
     const details = {
-        passNumber: "TEHDI274784",
+        passNumber: "TPASS991447533",
         passType: "daily",
         passValidTill: localPassengerDetails.passValidTill,
         passFare: localPassengerDetails.passFare
