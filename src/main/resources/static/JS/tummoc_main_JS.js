@@ -63,7 +63,7 @@ function updatePassDetails(passFare) {
     if (passFare === '80') {
         passTagElement.textContent = 'Ordinary';
         passTitleElement.textContent = 'Ordinary Day Pass';
-    } else if (passFare === '150') {
+    } else if (passFare === '140') {
         passTagElement.textContent = 'AC';
         passTitleElement.textContent = 'Vajra Gold Day Pass';
     }
